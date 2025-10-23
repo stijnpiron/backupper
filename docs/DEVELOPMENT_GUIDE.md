@@ -1,4 +1,6 @@
-# Backupper - Project Roadmap & Getting Started
+# Backupper - Development Guide
+
+Complete guide for developing Backupper, including sprint planning, roadmap, and getting started instructions.
 
 ## Quick Start Guide
 
@@ -560,6 +562,7 @@ Let me know when you're ready to proceed with the project initialization!
 Based on finalized requirements, the roadmap has been reorganized for optimal development flow.
 
 ### Key Changes:
+
 1. **Manual Backup Trigger** moved to Sprint 2 (from Sprint 4) - Essential for testing
 2. **Periodic Backup Trigger** moved to Sprint 6 (from Sprint 4) - Priority 2 feature
 3. **Timeline optimized** to ~130 hours (saved 13 hours through smart scoping)
@@ -569,15 +572,18 @@ Based on finalized requirements, the roadmap has been reorganized for optimal de
 ## Updated Sprint Details
 
 ### Sprint 2: Core Backup Engine + Manual Trigger (Weeks 3-4) ⭐ UPDATED
+
 **Goal**: Implement backup functionality AND manual trigger for immediate testing
 
 **User Stories**:
+
 - 3.1: Incremental Backup with Hardlinks (20 hours)
 - **3.2: Manual Backup Trigger (8 hours)** ⬅️ MOVED FROM SPRINT 4
 
 **Time Estimate**: 28 hours (was 20 hours)
 
 **Key Deliverables**:
+
 - Working backup engine with platform-abstracted file operations
 - Hardlink support for unchanged files (APFS/HFS+ on macOS)
 - File comparison and incremental logic
@@ -590,9 +596,11 @@ Based on finalized requirements, the roadmap has been reorganized for optimal de
 ---
 
 ### Sprint 4: Critical Triggers - App Quit & Volume Mount (Weeks 7-8) ⭐ UPDATED
+
 **Goal**: Implement the two critical automatic backup triggers for MVP
 
 **User Stories**:
+
 - 4.1: Application Quit Detection (ALL mode) (15 hours)
 - 4.3: Volume Mount Detection (15 hours)
 - **REMOVED: 4.2 Periodic Backup Trigger** (moved to Sprint 6)
@@ -600,6 +608,7 @@ Based on finalized requirements, the roadmap has been reorganized for optimal de
 **Time Estimate**: 30 hours (was 33 hours)
 
 **Key Deliverables**:
+
 - App quit monitoring with **ALL mode only** (backup when all monitored apps quit)
 - Volume mount detection for external drives (critical for Lightroom workflow)
 - App selection UI with browseable app picker
@@ -609,6 +618,7 @@ Based on finalized requirements, the roadmap has been reorganized for optimal de
 - macOS-specific implementations (NSWorkspace, DiskArbitration)
 
 **Technical Notes**:
+
 - **ALL quit mode only** - Simpler than implementing both ANY and ALL
 - ANY mode deferred to v1.2+ (not needed for single-app Lightroom workflow)
 - Time saved: ~2 hours
@@ -616,9 +626,11 @@ Based on finalized requirements, the roadmap has been reorganized for optimal de
 ---
 
 ### Sprint 6: System Integration + Periodic Trigger (Weeks 11-12) ⭐ UPDATED
+
 **Goal**: Complete system integration and add scheduled backups
 
 **User Stories**:
+
 - 5.1: System Notifications (5 hours)
 - 5.2: Launch at Login (6 hours)
 - 2.4: Backup History (3 hours)
@@ -627,6 +639,7 @@ Based on finalized requirements, the roadmap has been reorganized for optimal de
 **Time Estimate**: 26 hours (was 23 hours)
 
 **Key Deliverables**:
+
 - System notifications for backup events (start, complete, error)
 - Launch at login functionality
 - Backup history view with timestamps and status
@@ -639,22 +652,22 @@ Based on finalized requirements, the roadmap has been reorganized for optimal de
 
 ## Updated Timeline Summary
 
-| Sprint | Duration | Focus | Hours | Status |
-|--------|----------|-------|-------|--------|
-| 1 | Weeks 1-2 | Foundation + Platform Abstraction | 8h | Ready to start |
-| 2 | Weeks 3-4 | **Backup Engine + Manual Trigger** | 28h | ⭐ Updated |
-| 3 | Weeks 5-6 | UI & Configuration | 16h | |
-| 4 | Weeks 7-8 | **Critical Triggers (App Quit + Volume)** | 30h | ⭐ Updated |
-| 5 | Weeks 9-10 | Retention + Basic Progress | 26h | |
-| 6 | Weeks 11-12 | **Integration + Periodic Trigger** | 26h | ⭐ Updated |
-| 7 | Weeks 13-14 | Error Handling | 15h | |
-| 8 | Weeks 15-16 | Testing + Lightroom Validation | 18h | |
-| 9 | Weeks 17-18 | Documentation + macOS Release | 12h | |
-| **Total** | **18 weeks** | **macOS MVP (v1.0)** | **~130h** | |
-| 10 | Post-MVP | Windows Port (v1.1) | +20h | |
+| Sprint    | Duration     | Focus                                     | Hours     | Status         |
+| --------- | ------------ | ----------------------------------------- | --------- | -------------- |
+| 1         | Weeks 1-2    | Foundation + Platform Abstraction         | 8h        | Ready to start |
+| 2         | Weeks 3-4    | **Backup Engine + Manual Trigger**        | 28h       | ⭐ Updated     |
+| 3         | Weeks 5-6    | UI & Configuration                        | 16h       |                |
+| 4         | Weeks 7-8    | **Critical Triggers (App Quit + Volume)** | 30h       | ⭐ Updated     |
+| 5         | Weeks 9-10   | Retention + Basic Progress                | 26h       |                |
+| 6         | Weeks 11-12  | **Integration + Periodic Trigger**        | 26h       | ⭐ Updated     |
+| 7         | Weeks 13-14  | Error Handling                            | 15h       |                |
+| 8         | Weeks 15-16  | Testing + Lightroom Validation            | 18h       |                |
+| 9         | Weeks 17-18  | Documentation + macOS Release             | 12h       |                |
+| **Total** | **18 weeks** | **macOS MVP (v1.0)**                      | **~130h** |                |
+| 10        | Post-MVP     | Windows Port (v1.1)                       | +20h      |                |
 
-**Total Development Time**: ~150 hours (macOS MVP + Windows port)  
-**Calendar Time**: ~18 weeks for MVP (~4.5 months)  
+**Total Development Time**: ~150 hours (macOS MVP + Windows port)
+**Calendar Time**: ~18 weeks for MVP (~4.5 months)
 **Recommended Weekly Commitment**: 7-8 hours/week
 
 ---
@@ -662,12 +675,14 @@ Based on finalized requirements, the roadmap has been reorganized for optimal de
 ## Post-MVP Feature Roadmap
 
 ### v1.1 (Sprint 10, +20 hours)
+
 - ✅ Windows support
 - ✅ Windows-specific implementations (WMI, Win32 APIs)
 - ✅ NTFS/ReFS hardlink support
 - ✅ Windows installer and code signing
 
 ### v1.2 (Future)
+
 - ANY quit mode (trigger when any app quits)
 - Advanced checksum verification (incremental)
 - Detailed progress (per-file, speed, ETA)
@@ -675,6 +690,7 @@ Based on finalized requirements, the roadmap has been reorganized for optimal de
 - Exclude patterns UI
 
 ### v1.3 (Future)
+
 - Multiple backup profiles
 - Restore functionality
 - Cloud backup destinations
@@ -684,11 +700,12 @@ Based on finalized requirements, the roadmap has been reorganized for optimal de
 
 ## Time Optimization Summary
 
-**Original Estimate** (unfocused cross-platform): 145-150 hours  
-**Optimized Estimate** (smart scoping): 130 hours  
+**Original Estimate** (unfocused cross-platform): 145-150 hours
+**Optimized Estimate** (smart scoping): 130 hours
 **Time Saved**: ~15 hours
 
 ### How We Saved Time:
+
 1. **ALL-only quit mode** (-2 hours): Simpler than implementing both ANY and ALL modes
 2. **Basic verification** (-8 hours): Advanced checksums deferred to v1.2
 3. **Minimal first run** (-3 hours): No wizard, just basic setup
