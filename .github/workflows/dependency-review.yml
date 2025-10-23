@@ -1,9 +1,5 @@
 name: "Dependency Review"
 
-# NOTE: This workflow requires GitHub Advanced Security for private repositories
-# For private repos without Advanced Security, this workflow will be skipped
-# Alternative: Use Dependabot (configured in dependabot.yml) which works on all repos
-
 on:
   pull_request:
     branches: [main]
@@ -16,8 +12,6 @@ jobs:
   dependency-review:
     name: Dependency Review
     runs-on: ubuntu-latest
-    # Skip for private repos without Advanced Security
-    if: github.event.repository.visibility == 'public'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
