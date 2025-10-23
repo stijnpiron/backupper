@@ -20,7 +20,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -60,7 +60,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -96,7 +96,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -164,7 +164,7 @@ jobs:
       - name: Rust cache
         uses: swatinem/rust-cache@v2
         with:
-          workspaces: './src-tauri -> target'
+          workspaces: "./src-tauri -> target"
 
       - name: Install dependencies (Ubuntu)
         run: |
@@ -193,7 +193,7 @@ jobs:
       - name: Rust cache
         uses: swatinem/rust-cache@v2
         with:
-          workspaces: './src-tauri -> target'
+          workspaces: "./src-tauri -> target"
 
       - name: Install dependencies (Ubuntu)
         run: |
@@ -213,7 +213,7 @@ jobs:
         if: always()
         run: |
           cargo test --manifest-path=./src-tauri/Cargo.toml -- --nocapture --test-threads=1 > test-results.txt 2>&1 || true
-          
+
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v4
@@ -307,4 +307,3 @@ jobs:
   #       env:
   #         TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
   #         TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
-

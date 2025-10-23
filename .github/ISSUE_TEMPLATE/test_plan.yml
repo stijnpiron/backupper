@@ -61,7 +61,7 @@ body:
         - Development server startup
         - Build process
         - Configuration loading
-        
+
         **Out of Scope:**
         - Performance testing
         - Security penetration testing

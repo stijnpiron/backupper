@@ -2,7 +2,7 @@
 # RELEASE AUTOMATION WORKFLOW - CURRENTLY DISABLED
 # =============================================================================
 # This workflow is ready to use but disabled until needed.
-# 
+#
 # To enable:
 # 1. Remove the comment from the 'on:' trigger below
 # 2. Set up the required secrets in GitHub:
@@ -26,7 +26,7 @@ name: "Release"
 
 # DISABLED - workflow will not run until 'on:' trigger is uncommented above
 on:
-  workflow_dispatch:  # Manual trigger only for now
+  workflow_dispatch: # Manual trigger only for now
 
 jobs:
   create-release:
@@ -42,7 +42,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Get version from package.json
         id: version
@@ -73,7 +73,7 @@ jobs:
             - TODO: Add any important notes
 
             ---
-            
+
             **Full Changelog**: https://github.com/${{ github.repository }}/compare/v${{ steps.version.outputs.version }}...v${{ steps.version.outputs.version }}
           draft: true
           prerelease: false
@@ -94,7 +94,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -107,7 +107,7 @@ jobs:
       - name: Rust cache
         uses: swatinem/rust-cache@v2
         with:
-          workspaces: './src-tauri -> target'
+          workspaces: "./src-tauri -> target"
 
       - name: Install dependencies (Ubuntu only)
         if: matrix.platform == 'ubuntu-latest'

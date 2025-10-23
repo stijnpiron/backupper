@@ -5,6 +5,7 @@
 ## Related Issue(s)
 
 <!-- Link to the issue(s) this PR addresses -->
+
 Closes #
 Related to #
 
@@ -12,9 +13,9 @@ Related to #
 
 <!-- List the main changes made in this PR -->
 
-- 
-- 
-- 
+-
+-
+-
 
 ## Type of Change
 
@@ -48,9 +49,9 @@ Related to #
 
 <!-- Steps to test this PR -->
 
-1. 
-2. 
-3. 
+1.
+2.
+3.
 
 ### Test Results
 

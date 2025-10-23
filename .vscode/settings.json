@@ -26,12 +26,7 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
 
     // ESLint
-    "eslint.validate": [
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact"
-    ],
+    "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
     "eslint.workingDirectories": [
       {
         "mode": "auto"
@@ -113,15 +108,15 @@
       "esbenp.prettier-vscode",
       "dbaeumer.vscode-eslint",
       "bradlc.vscode-tailwindcss",
-      
+
       // Rust
       "rust-lang.rust-analyzer",
       "tamasfe.even-better-toml",
       "serayuzgur.crates",
-      
+
       // Tauri
       "tauri-apps.tauri-vscode",
-      
+
       // Utilities
       "editorconfig.editorconfig",
       "github.vscode-github-actions",

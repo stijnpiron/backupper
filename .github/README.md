@@ -42,6 +42,7 @@ Runs on every pull request and push to main branch.
    - Runs on: Only main branch pushes (to save CI minutes)
 
 **Required Secrets:**
+
 - `TAURI_PRIVATE_KEY` - For app signing (optional for debug builds)
 - `TAURI_KEY_PASSWORD` - For key password (optional for debug builds)
 
@@ -66,6 +67,7 @@ Runs on every push/PR to main and weekly on Mondays.
 Runs on every pull request.
 
 **Features:**
+
 - Reviews dependency changes in PRs
 - Blocks PRs with moderate+ severity vulnerabilities
 - Comments security summary on PR
@@ -97,11 +99,13 @@ Runs when PRs are opened or updated.
 ⚠️ **Currently disabled** - Ready to use but requires manual activation.
 
 **To enable:**
+
 1. Uncomment the `on: push: tags:` trigger in the workflow file
 2. Set up GitHub secrets: `TAURI_PRIVATE_KEY`, `TAURI_KEY_PASSWORD`
 3. Create and push a version tag: `git tag v0.1.0 && git push origin v0.1.0`
 
 **Features when enabled:**
+
 - Automatically creates GitHub releases from version tags
 - Builds for macOS, Linux, and Windows
 - Uploads platform-specific binaries (.dmg, .msi, .exe)
@@ -113,10 +117,11 @@ Runs when PRs are opened or updated.
 Automated dependency updates configured in `dependabot.yml`:
 
 - **Frontend (npm)**: Weekly updates on Mondays
-- **Backend (Cargo)**: Weekly updates on Mondays  
+- **Backend (Cargo)**: Weekly updates on Mondays
 - **GitHub Actions**: Monthly updates
 
 Dependencies are grouped for easier management:
+
 - Tauri packages
 - React packages
 - Dev dependencies
@@ -126,6 +131,7 @@ Dependencies are grouped for easier management:
 Located at `.github/pull_request_template.md`
 
 Ensures all PRs include:
+
 - Summary and description
 - Related issue links
 - Type of change
@@ -135,7 +141,9 @@ Ensures all PRs include:
 ## Issue Templates
 
 ### Bug Report (`bug_report.yml`)
+
 Structured template for reporting bugs with:
+
 - Bug description
 - Reproduction steps
 - Expected vs actual behavior
@@ -143,7 +151,9 @@ Structured template for reporting bugs with:
 - Log output
 
 ### Feature Request (`feature_request.yml`)
+
 Template for suggesting new features with:
+
 - Problem statement
 - Proposed solution
 - Alternatives considered
@@ -205,7 +215,7 @@ Recommended settings for main branch:
 1. **Caching**: All workflows use caching for dependencies
    - pnpm store cache
    - Rust cargo cache
-   
+
 2. **Parallel Jobs**: Jobs run in parallel when possible
 
 3. **Conditional Execution**: macOS builds only on main to save minutes
@@ -217,6 +227,7 @@ Recommended settings for main branch:
 ### CI Fails on Rust Checks
 
 Make sure to run locally before pushing:
+
 ```bash
 cargo clippy --manifest-path=./src-tauri/Cargo.toml -- -D warnings
 cargo fmt --manifest-path=./src-tauri/Cargo.toml --check
