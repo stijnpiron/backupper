@@ -1,0 +1,56 @@
+# Configuration for actions/labeler
+# Label PRs based on changed files
+
+frontend:
+  - changed-files:
+    - any-glob-to-any-file: 
+      - 'src/**/*'
+      - 'index.html'
+      - 'vite.config.ts'
+      - 'tsconfig*.json'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+
+backend:
+  - changed-files:
+    - any-glob-to-any-file: 
+      - 'src-tauri/**/*'
+
+documentation:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'docs/**/*'
+      - '*.md'
+      - '.github/**/*.md'
+
+ci:
+  - changed-files:
+    - any-glob-to-any-file:
+      - '.github/workflows/**'
+      - '.github/dependabot.yml'
+
+dependencies:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'src-tauri/Cargo.toml'
+      - 'src-tauri/Cargo.lock'
+
+config:
+  - changed-files:
+    - any-glob-to-any-file:
+      - '*.config.*'
+      - '.eslintrc.*'
+      - '.prettierrc*'
+      - 'src-tauri/rustfmt.toml'
+      - 'src-tauri/tauri.conf.json'
+
+tests:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'src/**/*.test.*'
+      - 'src/**/*.spec.*'
+      - 'src-tauri/src/**/*test*.rs'
+      - 'tests/**/*'
+      - 'e2e/**/*'

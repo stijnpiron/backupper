@@ -1,0 +1,147 @@
+name: 📋 Test Plan
+description: Create a test plan to track multiple test cases
+title: "[TEST PLAN] "
+labels: ["test-plan", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Create a test plan to organize and track test cases for a feature, release, or sprint.
+
+  - type: input
+    id: plan-id
+    attributes:
+      label: Test Plan ID
+      description: Unique identifier for this test plan
+      placeholder: "TP-001, SPRINT-01-TESTS, RELEASE-1.0-TESTS"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: plan-type
+    attributes:
+      label: Test Plan Type
+      options:
+        - Feature Test Plan
+        - Sprint Test Plan
+        - Release Test Plan
+        - Regression Test Plan
+        - Smoke Test Plan
+    validations:
+      required: true
+
+  - type: input
+    id: related-to
+    attributes:
+      label: Related To
+      description: Link to the feature, epic, or milestone
+      placeholder: "#222 (User Story: Project Setup)"
+    validations:
+      required: false
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Test Plan Objective
+      description: What is the overall goal of this test plan?
+      placeholder: "Validate all functionality for the project setup phase, ensuring the application can be built, run, and configured correctly."
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What will be tested (and what won't be tested)?
+      placeholder: |
+        **In Scope:**
+        - Application initialization
+        - Development server startup
+        - Build process
+        - Configuration loading
+        
+        **Out of Scope:**
+        - Performance testing
+        - Security penetration testing
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-cases
+    attributes:
+      label: Test Cases
+      description: List all test cases included in this plan (will be linked as they are created)
+      placeholder: |
+        - [ ] #xxx - TC-001: Verify Tauri app launches
+        - [ ] #xxx - TC-002: Verify React dev server starts
+        - [ ] #xxx - TC-003: Verify production build succeeds
+        - [ ] #xxx - TC-004: Verify ESLint passes
+        - [ ] #xxx - TC-005: Verify TypeScript compilation
+      render: markdown
+    validations:
+      required: false
+
+  - type: textarea
+    id: test-environment
+    attributes:
+      label: Test Environment
+      description: Environment requirements for executing this test plan
+      placeholder: |
+        - **OS**: macOS 14+, Ubuntu 22.04+, Windows 11
+        - **Node.js**: v20+
+        - **Rust**: 1.90.0+
+        - **Browser**: Chrome 120+, Firefox 120+
+    validations:
+      required: false
+
+  - type: textarea
+    id: entry-criteria
+    attributes:
+      label: Entry Criteria
+      description: What must be complete before testing can begin?
+      placeholder: |
+        - All development tasks completed
+        - Code merged to test branch
+        - CI/CD pipeline passing
+        - Test environment deployed
+    validations:
+      required: false
+
+  - type: textarea
+    id: exit-criteria
+    attributes:
+      label: Exit Criteria
+      description: What conditions must be met to consider testing complete?
+      placeholder: |
+        - All P0 and P1 test cases passed
+        - No critical or high-priority bugs open
+        - Test coverage ≥ 80%
+        - All automated tests passing
+    validations:
+      required: false
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks and Mitigation
+      description: Potential risks and how they will be addressed
+      placeholder: |
+        - **Risk**: Limited testing time → **Mitigation**: Prioritize P0/P1 tests
+        - **Risk**: Environment instability → **Mitigation**: Use containerized test env
+    validations:
+      required: false
+
+  - type: textarea
+    id: schedule
+    attributes:
+      label: Test Schedule
+      description: Timeline for test execution
+      placeholder: |
+        - Test plan creation: [Date]
+        - Test case development: [Date]
+        - Test execution: [Date range]
+        - Results review: [Date]
+    validations:
+      required: false
