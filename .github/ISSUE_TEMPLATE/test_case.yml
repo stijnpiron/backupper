@@ -1,0 +1,160 @@
+name: 🧪 Test Case
+description: Create a test case for manual or automated testing
+title: "[TEST] "
+labels: ["test-case", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for creating a test case! This helps us ensure quality and track test coverage.
+
+  - type: input
+    id: test-id
+    attributes:
+      label: Test ID
+      description: Unique identifier for this test case (e.g., TC-001, E2E-BackupList-001)
+      placeholder: "TC-001"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: test-type
+    attributes:
+      label: Test Type
+      description: What type of test is this?
+      options:
+        - Unit Test
+        - Integration Test
+        - End-to-End Test
+        - Manual Test
+        - Smoke Test
+        - Regression Test
+        - Performance Test
+        - Security Test
+    validations:
+      required: true
+
+  - type: dropdown
+    id: test-level
+    attributes:
+      label: Test Level
+      description: At what level does this test operate?
+      options:
+        - Frontend
+        - Backend (Rust)
+        - Full Stack
+        - API
+        - UI/UX
+    validations:
+      required: true
+
+  - type: dropdown
+    id: automation-status
+    attributes:
+      label: Automation Status
+      description: Is this test automated or manual?
+      options:
+        - Automated
+        - Manual
+        - To Be Automated
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How critical is this test?
+      options:
+        - P0 - Critical (Blocker)
+        - P1 - High
+        - P2 - Medium
+        - P3 - Low
+    validations:
+      required: true
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Test Objective
+      description: What is this test validating?
+      placeholder: "Verify that users can create a new backup configuration with valid settings"
+    validations:
+      required: true
+
+  - type: textarea
+    id: preconditions
+    attributes:
+      label: Preconditions
+      description: What needs to be set up before running this test?
+      placeholder: |
+        - User is logged in
+        - Test database is seeded
+        - Application is running in test mode
+    validations:
+      required: false
+
+  - type: textarea
+    id: test-steps
+    attributes:
+      label: Test Steps
+      description: Detailed steps to execute the test
+      placeholder: |
+        1. Navigate to the backup configuration page
+        2. Click "New Backup" button
+        3. Enter backup name: "Test Backup"
+        4. Select source directory: "/home/user/documents"
+        5. Select destination: "External Drive"
+        6. Click "Save"
+        7. Verify backup appears in the list
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-result
+    attributes:
+      label: Expected Result
+      description: What should happen when the test passes?
+      placeholder: |
+        - Backup configuration is saved successfully
+        - Success message is displayed
+        - New backup appears in the backup list
+        - Backup status is "Ready"
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-data
+    attributes:
+      label: Test Data
+      description: Any specific data needed for this test
+      placeholder: |
+        - Test file: backup-config.json
+        - Mock data: user-credentials.json
+      render: markdown
+    validations:
+      required: false
+
+  - type: input
+    id: related-feature
+    attributes:
+      label: Related Feature/User Story
+      description: Link to the feature or user story this test validates (e.g., #222)
+      placeholder: "#222"
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other information about this test case
+      placeholder: |
+        - Dependencies on other tests
+        - Known issues or limitations
+        - References to documentation
+    validations:
+      required: false

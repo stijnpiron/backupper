@@ -1,0 +1,84 @@
+name: Task/Subtask
+description: Create a task or subtask for a user story
+title: "[Task]: "
+labels: ["task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for creating tasks and subtasks that are part of a user story.
+
+  - type: input
+    id: parent
+    attributes:
+      label: Parent Issue
+      description: Link to the parent user story or epic
+      placeholder: "#123"
+    validations:
+      required: false
+
+  - type: input
+    id: task-id
+    attributes:
+      label: Task ID
+      description: Task identifier (e.g., 1.1.1, 2.3.2)
+      placeholder: "1.1.1"
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Task Description
+      description: Clear description of what needs to be done
+      placeholder: Describe the task in detail
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: How do we know when this task is complete?
+      placeholder: |
+        - [ ] Criterion 1
+        - [ ] Criterion 2
+        - [ ] Criterion 3
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - P0 - Must Have
+        - P1 - Should Have
+        - P2 - Nice to Have
+    validations:
+      required: true
+
+  - type: input
+    id: estimate
+    attributes:
+      label: Time Estimate
+      description: Estimated time to complete (e.g., 2 hours)
+      placeholder: "2 hours"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Task Checklist
+      options:
+        - label: Implementation complete
+        - label: Code reviewed
+        - label: Tests passing
+        - label: Documentation updated
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Any additional context, dependencies, or technical notes

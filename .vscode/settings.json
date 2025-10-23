@@ -1,0 +1,128 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    // Editor settings
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "editor.rulers": [100],
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.eol": "\n",
+
+    // TypeScript/JavaScript
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+
+    // ESLint
+    "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+    "eslint.workingDirectories": [
+      {
+        "mode": "auto"
+      }
+    ],
+
+    // Prettier
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    // Rust
+    "[rust]": {
+      "editor.defaultFormatter": "rust-lang.rust-analyzer",
+      "editor.formatOnSave": true,
+      "editor.tabSize": 4
+    },
+    "rust-analyzer.checkOnSave.command": "clippy",
+    "rust-analyzer.cargo.features": "all",
+    "rust-analyzer.inlayHints.chainingHints.enable": true,
+    "rust-analyzer.inlayHints.parameterHints.enable": true,
+
+    // TOML
+    "[toml]": {
+      "editor.defaultFormatter": "tamasfe.even-better-toml"
+    },
+
+    // File exclusions
+    "files.exclude": {
+      "**/.git": true,
+      "**/.DS_Store": true,
+      "**/node_modules": true,
+      "**/target": true,
+      "**/dist": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/target": true,
+      "**/dist": true,
+      "**/pnpm-lock.yaml": true,
+      "**/Cargo.lock": true
+    },
+
+    // Git
+    "git.ignoreLimitWarning": true,
+
+    // Terminal
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+
+    // Tauri specific
+    "files.watcherExclude": {
+      "**/target/**": true,
+      "**/node_modules/**": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      // Frontend
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "bradlc.vscode-tailwindcss",
+
+      // Rust
+      "rust-lang.rust-analyzer",
+      "tamasfe.even-better-toml",
+      "serayuzgur.crates",
+
+      // Tauri
+      "tauri-apps.tauri-vscode",
+
+      // Utilities
+      "editorconfig.editorconfig",
+      "github.vscode-github-actions",
+      "eamodio.gitlens",
+      "usernamehw.errorlens",
+      "streetsidesoftware.code-spell-checker"
+    ]
+  }
+}
