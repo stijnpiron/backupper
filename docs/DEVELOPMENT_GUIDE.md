@@ -319,13 +319,19 @@ Week 10-11: Sprint 9 (Logs & Distribution)
 
 ```bash
 # Feature branch workflow
-git checkout -b feature/task-description
+# Branch naming convention: feature/{issue-number}-{short-description}
+# Example: feature/248-init-tauri
+git checkout -b feature/248-init-tauri
 # Make changes
 git add .
 git commit -m "feat: implement [feature description]"
-git push origin feature/task-description
+git push origin feature/248-init-tauri
 # Merge to main when complete
 ```
+
+**Branch Naming Convention**: Always use the issue number as prefix
+- Format: `feature/{issue-number}-{short-description}`
+- Example: `feature/248-init-tauri` for issue #248
 
 ### Commit Message Convention
 
