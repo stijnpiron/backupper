@@ -55,13 +55,23 @@ All documentation is in the **[docs/](./docs/)** folder:
 # Clone and install
 git clone https://github.com/stijnpiron/backupper.git
 cd backupper
-npm install
+pnpm install
 
 # Run development server
-npm run tauri dev
+pnpm tauri dev
 ```
 
 For detailed setup instructions, see **[docs/DEVELOPMENT_GUIDE.md](./docs/DEVELOPMENT_GUIDE.md)**.
+
+### MCP Server Configuration
+
+This project includes Model Context Protocol (MCP) server configurations in `.mcp/` for enhanced AI-assisted development:
+
+- **Filesystem Server**: File operations within the project
+- **Git Server**: Repository management and version control
+- **GitHub Server**: Issue tracking and PR management
+
+See [.mcp/README.md](./.mcp/README.md) for setup instructions and environment variables.
 
 ## Development Status
 
