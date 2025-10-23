@@ -11,8 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add development infrastructure and comprehensive testing ([#442](https://github.com/stijnpiron/backupper/issues/442))
 
+### 🐛 Bug Fixes
+
+- Add missing permissions for Rust Security Audit job
+
 ### 📚 Documentation
 
+- Update CHANGELOG.md
 - Update CHANGELOG.md
 - Update CHANGELOG.md
 - Update CHANGELOG.md
