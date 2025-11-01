@@ -135,7 +135,7 @@ jobs:
 
       - name: Upload coverage reports
         if: always() && steps.test.outputs.has_tests == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: frontend-coverage
           path: coverage/
@@ -216,7 +216,7 @@ jobs:
 
       - name: Upload test results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: rust-test-results
           path: test-results.txt
